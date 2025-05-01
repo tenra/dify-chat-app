@@ -1,5 +1,5 @@
 @app
-grunge-stack-template
+dify-chat-app-2997
 
 @aws
 runtime nodejs18.x
