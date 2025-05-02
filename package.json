@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "remix build",
-    "dev": "remix dev --manual -c \"arc sandbox -e testing\"",
+    "dev": "concurrently \"npm run sandbox\" \"npm run seed\" --no-kill-others",
+    "sandbox": "remix dev --manual -c \"arc sandbox -e testing\"",
+    "seed": "npx tsx scripts/seed.ts",
     "format": "prettier --write .",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "cross-env NODE_ENV=production arc sandbox",
@@ -53,6 +55,7 @@
     "@vitejs/plugin-react": "^4.3.2",
     "@vitest/coverage-v8": "^2.1.2",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
     "cross-env": "^7.0.3",
     "cypress": "^13.15.0",
     "esbuild": "^0.24.0",
