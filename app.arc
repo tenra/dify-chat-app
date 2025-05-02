@@ -30,3 +30,6 @@ password
 note
   pk *String  # userId
   sk **String # noteId
+
+product
+  pk *String # product name
